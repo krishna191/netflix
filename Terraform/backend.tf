@@ -8,9 +8,9 @@ terraform {
   }
 
   cloud {
-    organization = "amanpathak-devops" 
+    organization = "krishnaSnew" 
     workspaces { 
-      name = "netflix-clone-project"
+      name = "netflix-workspace"
       } 
     }
   }
