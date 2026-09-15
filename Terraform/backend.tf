@@ -7,3 +7,14 @@ terraform {
     }
   }
 
+ cloud {
+    organization = "krishnaSnew" 
+    workspaces { 
+      name = "netflix-workspace"
+      } 
+    }
+  }
+
+provider "aws" {
+  region = var.aws-region
+}
