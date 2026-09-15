@@ -52,7 +52,12 @@ jobs:
           key: ${{ runner.os }}-terraform-${{ hashFiles('**/*.tf') }}
           restore-keys: |
             ${{ runner.os }}-terraform-
-      
+      - name: Setting Up the Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.13.3"
+          terraform_wrapper: true
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       - name: Initialising the Terraform
         run: terraform init 
 
