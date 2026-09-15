@@ -52,7 +52,13 @@ jobs:
           key: ${{ runner.os }}-terraform-${{ hashFiles('**/*.tf') }}
           restore-keys: |
             ${{ runner.os }}-terraform-
-          
+      - name: Setup Terraform CLI configuration
+        run: |
+          cat > ~/.terraformrc << EOF
+          credentials "app.terraform.io" {
+            token = "${{ env.TF_API_TOKEN }}"
+          }
+          EOF    
       - name: Initialising the Terraform
         run: terraform init 
 
