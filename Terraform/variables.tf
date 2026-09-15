@@ -1,4 +1,8 @@
-variable "aws-region" {}
+variable "aws_region" {
+  description = "AWS region"
+  type        = string
+  default     = "us-east-1"
+}
 variable "env" {}
 variable "cidr-block" {}
 variable "pub-subnet-count" {}
