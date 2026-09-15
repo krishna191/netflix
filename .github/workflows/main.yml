@@ -54,7 +54,7 @@ jobs:
             ${{ runner.os }}-terraform-
           
       - name: Initialising the Terraform
-        run: terraform init
+        run: terraform init -backend=false
 
       - name: Terraform Format Check
         run: terraform fmt -check --diff
