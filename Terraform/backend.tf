@@ -9,14 +9,6 @@ required_providers {
     }
   }
 
- cloud {
-    organization = "krishnaSnew" 
-    workspaces { 
-      name = "netflix-workspace"
-      } 
-    }
-  }
-
 provider "aws" {
   region = var.aws_region
 }
